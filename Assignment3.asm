@@ -95,14 +95,12 @@ setup:
 	ldi r18, 0
 	sts TCNT3L, r18
 
-
 	ldi r19, 4
 	sts collatz_space, r19
 	ldi r19, 2
 	sts collatz_space+1, r19
 	ldi r19, 7
 	sts collatz_space+2, r19
-
 
 	;call display_collatz
 
@@ -132,11 +130,6 @@ main_loop:
 		breq go_left
 		cpi button, 1
 	;end comparator
-
-
-
-
-
 
 	ldi temp1, 0b00100100
 	sts PORTL, temp1
@@ -456,9 +449,6 @@ timer3_ISR:
 	sts SREG, r16
 	pop r16
 	reti
-
-
-
 
 ; copy two strings: msg1_p from program memory to msg1 in data memory and
 ;                   msg2_p from program memory to msg2 in data memory
